@@ -1,0 +1,12 @@
+echo
+echo
+type Stringer interface {
+    String() string
+}
+var value interface{} // Value provided by caller.
+switch str := value.(type) {
+case string:
+    return str
+case Stringer:
+    return str.String()
+}
