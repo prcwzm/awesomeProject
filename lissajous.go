@@ -5,12 +5,8 @@ import (
 	"image/color"
 	"image/gif"
 	"io"
-	"log"
 	"math"
 	"math/rand"
-	"net/http"
-	"os"
-	"time"
 )
 
 var palette = []color.Color{color.RGBA{R: 0x54, G: 0x8c, B: 0x45, A: 0xFF},
@@ -24,18 +20,18 @@ const (
 	blackIndex = 1
 )
 
-func main() {
-	rand.Seed(time.Now().UTC().UnixNano())
-	if len(os.Args) > 1 && os.Args[1] == "web" {
-		handler := func(w http.ResponseWriter, r *http.Request) {
-			lissajousGreenBlack(w)
-		}
-		http.HandleFunc("/", handler)
-		log.Fatal(http.ListenAndServe("localhost:8080", nil))
-		return
-	}
-	lissajousGreenBlack(os.Stdout)
-}
+//func main() {
+//	rand.Seed(time.Now().UTC().UnixNano())
+//	if len(os.Args) > 1 && os.Args[1] == "web" {
+//		handler := func(w http.ResponseWriter, r *http.Request) {
+//			lissajousGreenBlack(w)
+//		}
+//		http.HandleFunc("/", handler)
+//		log.Fatal(http.ListenAndServe("localhost:8080", nil))
+//		return
+//	}
+//	lissajousGreenBlack(os.Stdout)
+//}
 
 func lissajous(out io.Writer) {
 	const (
@@ -72,6 +68,46 @@ func lissajousGreenBlack(out io.Writer) {
 		nframes = 128
 		delay   = 8
 	)
+	freq := rand.Float64() * 3.0
+	anim := gif.GIF{LoopCount: nframes}
+	phase := 0.5
+	for i := 0; i < nframes; i++ {
+		rect := image.Rect(0, 0, 2*size+1, 2*size+1)
+		img := image.NewPaletted(rect, palette)
+		t := 0.0
+		for ; t < cycles*math.Pi; t += res {
+			x := math.Sin(t)
+			y := math.Sin(t*freq + phase)
+			img.SetColorIndex(size+int(x*size+0.5), size+int(y*size+0.5),
+				uint8(rand.Intn(len(palette))))
+		}
+		for ; t < 2*cycles*math.Pi; t += res {
+			x := math.Sin(t)
+			y := math.Sin(t*freq + phase)
+			img.SetColorIndex(size+int(x*size+0.5), size+int(y*size+0.5),
+				uint8(rand.Intn(len(palette))))
+		}
+		for ; t < 2*cycles*math.Pi; t += res {
+			x := math.Sin(t*freq + 2*phase)
+			y := math.Sin(t*freq + phase)
+			img.SetColorIndex(size+int(x*size+0.5), size+int(y*size+0.5),
+				uint8(rand.Intn(len(palette))))
+		}
+		phase += 0.1
+		anim.Delay = append(anim.Delay, delay)
+		anim.Image = append(anim.Image, img)
+	}
+	gif.EncodeAll(out, &anim)
+}
+
+func lissajousGreenBlackCyc(out io.Writer, cyclesSetting int) {
+	const (
+		res     = 0.001
+		size    = 100
+		nframes = 128
+		delay   = 8
+	)
+	cycles := float64(cyclesSetting)
 	freq := rand.Float64() * 3.0
 	anim := gif.GIF{LoopCount: nframes}
 	phase := 0.5

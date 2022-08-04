@@ -7,10 +7,10 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/", handler)
+	http.HandleFunc("/", handlerWebPoint)
 	log.Fatal(http.ListenAndServe("localhost:8080", nil))
 }
 
-func handler(w http.ResponseWriter, r *http.Request) {
+func handlerWebPoint(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "URL.Path = %q\n", r.URL.Path)
 }
