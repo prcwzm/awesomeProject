@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ead5828-252d-425f-9a5f-234b2ce5319f" name="Changes" comment="zenowu 20220805 zenowu 入门learning 代码合并">
-      <change beforePath="$PROJECT_DIR$/lissajous.go" beforeDir="false" afterPath="$PROJECT_DIR$/lissajous.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverecho.go" beforeDir="false" afterPath="$PROJECT_DIR$/serverecho.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpoint.go" beforeDir="false" afterPath="$PROJECT_DIR$/webpoint.go" afterDir="false" />
+    <list default="true" id="0ead5828-252d-425f-9a5f-234b2ce5319f" name="Changes" comment="zenowu 20220805 zenowu 入门learning 0.0.3 exec 提交">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sequence.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stringer.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dup1.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/effectiveGO.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fetch.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fetchall.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lissajous.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serverecho.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpoint.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +70,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -69,7 +90,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="zenowu 20220805 zenowu 入门learning 代码合并" />
-    <option name="LAST_COMMIT_MESSAGE" value="zenowu 20220805 zenowu 入门learning 代码合并" />
+    <MESSAGE value="zenowu 20220805 zenowu 入门learning 0.0.2 http 练习" />
+    <MESSAGE value="zenowu 20220805 zenowu 入门learning 0.0.3 exec 提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="zenowu 20220805 zenowu 入门learning 0.0.3 exec 提交" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
