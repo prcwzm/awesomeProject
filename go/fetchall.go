@@ -26,7 +26,7 @@ func fetchall(messageChan chan string) {
 	start := time.Now()
 	ch := make(chan string)
 	for _, url := range os.Args[1:] {
-		go fetch(url, ch)
+		go fetchAllIntoFile(url, ch)
 	}
 	for range os.Args[1:] {
 		fmt.Println(<-ch)
@@ -36,7 +36,7 @@ func fetchall(messageChan chan string) {
 
 }
 
-func fetch(url string, ch chan string) {
+func fetchAllIntoFile(url string, ch chan string) {
 	start := time.Now()
 	resp, err := http.Get(url)
 	if err != nil {
