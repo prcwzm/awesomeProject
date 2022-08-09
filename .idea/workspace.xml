@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ead5828-252d-425f-9a5f-234b2ce5319f" name="Changes" comment="zenowu 20220805 zenowu 入门learning 0.0.6 echo use flag to change echo output">
-      <change afterPath="$PROJECT_DIR$/go/mathmatic.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go/tempconv.go" afterDir="false" />
+    <list default="true" id="0ead5828-252d-425f-9a5f-234b2ce5319f" name="Changes" comment="zenowu 20220805 zenowu 入门learning 0.0.7 温度">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +105,8 @@
     <MESSAGE value="zenowu 20220805 zenowu 入门learning 0.0.4 代码结构调整" />
     <MESSAGE value="zenowu 20220805 zenowu 入门learning 0.0.5 错误调整" />
     <MESSAGE value="zenowu 20220805 zenowu 入门learning 0.0.6 echo use flag to change echo output" />
-    <option name="LAST_COMMIT_MESSAGE" value="zenowu 20220805 zenowu 入门learning 0.0.6 echo use flag to change echo output" />
+    <MESSAGE value="zenowu 20220805 zenowu 入门learning 0.0.7 温度" />
+    <option name="LAST_COMMIT_MESSAGE" value="zenowu 20220805 zenowu 入门learning 0.0.7 温度" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
