@@ -8,7 +8,6 @@ import (
 )
 
 func main() {
-	naturalLogarithm()
 }
 
 func naturalLogarithm() {

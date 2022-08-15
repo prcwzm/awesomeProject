@@ -1,6 +1,7 @@
 package main
 
 import (
+	"../surface"
 	"fmt"
 	"log"
 	"net/http"
@@ -16,7 +17,13 @@ func main() {
 	http.HandleFunc("/count", counter)
 	http.HandleFunc("/lissajous/", lissajousHandlerCyc)
 	http.HandleFunc("/lissajous", lissajousHandler)
+	http.HandleFunc("/surface", surfaceHandler)
 	log.Fatal(http.ListenAndServe("localhost:8080", nil))
+}
+
+func surfaceHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "image/svg+xml")
+	surface.SurfaceWeb(w)
 }
 
 func lissajousHandlerCyc(writer http.ResponseWriter, request *http.Request) {
