@@ -1,9 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+	"os"
+	"strconv"
+)
 
 func main() {
-	unicode()
+	naturalLogarithm()
+}
+
+func naturalLogarithm() {
+	var y float64
+	y, _ = strconv.ParseFloat(os.Args[1], 64)
+	fmt.Printf("%f \n", math.Pow(y, math.E))
 }
 
 func unicode() {
