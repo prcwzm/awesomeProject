@@ -46,7 +46,7 @@ func SurfaceWeb(out io.Writer) {
 			bx, by, ok := corner(i, j)
 			cx, cy, ok := corner(i, j+1)
 			dx, dy, ok := corner(i+1, j+1)
-			if ok == 1 {
+			if ok > 0 {
 				continue
 			}
 			fmt.Fprintf(out, "<polygon points=' %g,%g,%g,%g,%g,%g,%g,%g,'/>\n", ax, ay, bx, by, cx, cy, dx, dy)
@@ -62,9 +62,7 @@ func corner(i, j int) (sx float64, sy float64, ok float64) {
 	sx = width/2 + (x-y)*cos30*xyscale
 	sy = height/2 + (x+y)*sin30*xyscale - z*zscale
 	if math.IsInf(sx, 0) || math.IsInf(sy, 0) {
-		ok = 1
-	} else {
-		ok = 0
+		ok += 1
 	}
 	return
 }
