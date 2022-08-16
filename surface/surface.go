@@ -23,10 +23,10 @@ func Surface() {
 		"width = '%d' height = '%d'>", width, height)
 	for i := 0; i < cells; i++ {
 		for j := 0; j < cells; j++ {
-			ax, ay := corner(i+1, j)
-			bx, by := corner(i, j)
-			cx, cy := corner(i, j+1)
-			dx, dy := corner(i+1, j+1)
+			ax, ay, _ := corner(i+1, j)
+			bx, by, _ := corner(i, j)
+			cx, cy, _ := corner(i, j+1)
+			dx, dy, _ := corner(i+1, j+1)
 			fmt.Printf("<polygon points=' %g,%g,%g,%g,%g,%g,%g,%g,'/>\n", ax, ay, bx, by, cx, cy, dx, dy)
 		}
 	}
@@ -42,23 +42,31 @@ func SurfaceWeb(out io.Writer) {
 	}
 	for i := 0; i < cells; i++ {
 		for j := 0; j < cells; j++ {
-			ax, ay := corner(i+1, j)
-			bx, by := corner(i, j)
-			cx, cy := corner(i, j+1)
-			dx, dy := corner(i+1, j+1)
+			ax, ay, ok := corner(i+1, j)
+			bx, by, ok := corner(i, j)
+			cx, cy, ok := corner(i, j+1)
+			dx, dy, ok := corner(i+1, j+1)
+			if ok == 1 {
+				continue
+			}
 			fmt.Fprintf(out, "<polygon points=' %g,%g,%g,%g,%g,%g,%g,%g,'/>\n", ax, ay, bx, by, cx, cy, dx, dy)
 		}
 	}
 	fmt.Fprintf(out, "</svg>")
 }
 
-func corner(i, j int) (float64, float64) {
+func corner(i, j int) (sx float64, sy float64, ok float64) {
 	x := xyrange * (float64(i)/cells - 0.5)
 	y := xyrange * (float64(j)/cells - 0.5)
 	z := f(x, y)
-	sx := width/2 + (x-y)*cos30*xyscale
-	sy := height/2 + (x+y)*sin30*xyscale - z*zscale
-	return sx, sy
+	sx = width/2 + (x-y)*cos30*xyscale
+	sy = height/2 + (x+y)*sin30*xyscale - z*zscale
+	if math.IsInf(sx, 0) || math.IsInf(sy, 0) {
+		ok = 1
+	} else {
+		ok = 0
+	}
+	return
 }
 
 func f(x, y float64) float64 {

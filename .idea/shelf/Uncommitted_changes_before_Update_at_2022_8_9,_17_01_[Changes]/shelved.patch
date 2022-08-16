@@ -1,0 +1,121 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"ALL\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"0ead5828-252d-425f-9a5f-234b2ce5319f\" name=\"Changes\" comment=\"zenowu 20220805 zenowu 入门learning 代码合并\">\n      <change beforePath=\"$PROJECT_DIR$/lissajous.go\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/lissajous.go\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/serverecho.go\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/serverecho.go\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/webpoint.go\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/webpoint.go\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"GOROOT\" url=\"file:///usr/local/go\" />\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2CklcXzM2fc0SfVqXKfntiNojFs\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;Project.color&quot;: &quot;245515&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,\n    &quot;last_opened_file_path&quot;: &quot;/Users/winnie&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;MTConfigurable&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/exec\" />\n    </key>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"zenowu 20220805 zenowu 入门learning 代码合并\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"zenowu 20220805 zenowu 入门learning 代码合并\" />\n  </component>\n  <component name=\"VgoProject\">\n    <settings-migrated>true</settings-migrated>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 553ccf8283ae1544e3b8dfa5df3fa06c1cb08fef)
++++ b/.idea/workspace.xml	(date 1660035545591)
+@@ -4,10 +4,11 @@
+     <option name="autoReloadType" value="ALL" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="0ead5828-252d-425f-9a5f-234b2ce5319f" name="Changes" comment="zenowu 20220805 zenowu 入门learning 代码合并">
+-      <change beforePath="$PROJECT_DIR$/lissajous.go" beforeDir="false" afterPath="$PROJECT_DIR$/lissajous.go" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/serverecho.go" beforeDir="false" afterPath="$PROJECT_DIR$/serverecho.go" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/webpoint.go" beforeDir="false" afterPath="$PROJECT_DIR$/webpoint.go" afterDir="false" />
++    <list default="true" id="fcbd5eaf-9ae4-4981-a7c0-e11d401668fe" name="Changes" comment="prcwzm zenowu 20220805 zenowu 入门learning 0.0.4 vcs 优化">
++      <change afterPath="$PROJECT_DIR$/.idea/awesomeProject.iml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/exec/serverechoLissajousCycleIntel" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -17,6 +18,7 @@
+   <component name="GOROOT" url="file:///usr/local/go" />
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++    <option name="RESET_MODE" value="HARD" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+@@ -27,26 +29,28 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;Project.color&quot;: &quot;245515&quot;,
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed&quot;: &quot;true&quot;,
+-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;/Users/winnie&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;MTConfigurable&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "Project.color": "245515",
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
++    "RunOnceActivity.go.formatter.settings.were.checked": "true",
++    "RunOnceActivity.go.migrated.go.modules.settings": "true",
++    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
++    "RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed": "true",
++    "WebServerToolWindowFactoryState": "false",
++    "configurable..is.expanded": "false",
++    "configurable.GoLibrariesConfigurable.is.expanded": "true",
++    "go.import.settings.migrated": "true",
++    "last_opened_file_path": "/Users/winnie",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "settings.editor.selected.configurable": "go.sdk"
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="$PROJECT_DIR$/exec" />
+Index: .idea/awesomeProject.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/awesomeProject.iml b/.idea/awesomeProject.iml
+new file mode 100644
+--- /dev/null	(date 1659666042150)
++++ b/.idea/awesomeProject.iml	(date 1659666042150)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="WEB_MODULE" version="4">
++  <component name="Go" enabled="true" />
++  <component name="NewModuleRootManager">
++    <content url="file://$MODULE_DIR$" />
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1659666042159)
++++ b/.idea/modules.xml	(date 1659666042159)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/awesomeProject.iml" filepath="$PROJECT_DIR$/.idea/awesomeProject.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
