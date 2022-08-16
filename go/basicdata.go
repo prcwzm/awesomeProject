@@ -1,6 +1,7 @@
 package main
 
 import (
+	"../surface"
 	"fmt"
 	"math"
 	"os"
@@ -8,6 +9,7 @@ import (
 )
 
 func main() {
+	surface.Surface()
 }
 
 func naturalLogarithm() {
