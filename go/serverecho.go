@@ -1,6 +1,7 @@
 package main
 
 import (
+	"../mandelbrot"
 	"../surface"
 	"fmt"
 	"log"
@@ -18,7 +19,23 @@ func main() {
 	http.HandleFunc("/lissajous/", lissajousHandlerCyc)
 	http.HandleFunc("/lissajous", lissajousHandler)
 	http.HandleFunc("/surface", surfaceHandler)
+	http.HandleFunc("/mandelbrot", mandelbrotHandler)
+	http.HandleFunc("/MandelbrotColor", mandelbrotColorHandler)
+	http.HandleFunc("/SuperSample", SuperSampleHandler)
 	log.Fatal(http.ListenAndServe("localhost:8080", nil))
+}
+
+func SuperSampleHandler(writer http.ResponseWriter, request *http.Request) {
+	mandelbrot.SuperSample(writer)
+}
+
+func mandelbrotColorHandler(writer http.ResponseWriter, request *http.Request) {
+	mandelbrot.MandelbrotColor(writer)
+
+}
+
+func mandelbrotHandler(w http.ResponseWriter, r *http.Request) {
+	mandelbrot.Mandelbrot(w)
 }
 
 func surfaceHandler(w http.ResponseWriter, r *http.Request) {
