@@ -22,7 +22,13 @@ func main() {
 	http.HandleFunc("/mandelbrot", mandelbrotHandler)
 	http.HandleFunc("/MandelbrotColor", mandelbrotColorHandler)
 	http.HandleFunc("/SuperSample", SuperSampleHandler)
+	http.HandleFunc("/SuperSampleMax", SuperSampleMaxHandler)
 	log.Fatal(http.ListenAndServe("localhost:8080", nil))
+}
+
+func SuperSampleMaxHandler(writer http.ResponseWriter, request *http.Request) {
+	mandelbrot.SuperSampleMax(writer)
+
 }
 
 func SuperSampleHandler(writer http.ResponseWriter, request *http.Request) {
