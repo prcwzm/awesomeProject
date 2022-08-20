@@ -23,7 +23,12 @@ func main() {
 	http.HandleFunc("/MandelbrotColor", mandelbrotColorHandler)
 	http.HandleFunc("/SuperSample", SuperSampleHandler)
 	http.HandleFunc("/SuperSampleMax", SuperSampleMaxHandler)
+	http.HandleFunc("/NewtonColor", NewtonColorHandler)
 	log.Fatal(http.ListenAndServe("localhost:8080", nil))
+}
+
+func NewtonColorHandler(writer http.ResponseWriter, request *http.Request) {
+	mandelbrot.NewtonColor(writer)
 }
 
 func SuperSampleMaxHandler(writer http.ResponseWriter, request *http.Request) {

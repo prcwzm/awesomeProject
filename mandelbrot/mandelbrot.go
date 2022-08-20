@@ -1,6 +1,7 @@
 package mandelbrot
 
 import (
+	"../newton"
 	"image"
 	"image/color"
 	"image/png"
@@ -71,6 +72,36 @@ func mandelbrotColor(z complex128) color.Color {
 		}
 	}
 	return color.White
+}
+
+func NewtonColor(w io.Writer) {
+	superWidth := width
+	superHeight := height
+	boundary := 0.00001
+	var err error
+	if os.Args[1] != "" {
+		superWidth, err = strconv.Atoi(os.Args[1])
+	}
+	if os.Args[2] != "" {
+		superHeight, err = strconv.Atoi(os.Args[2])
+	}
+	if os.Args[3] != "" {
+		boundary, err = strconv.ParseFloat(os.Args[3], 64)
+	}
+
+	img := image.NewRGBA(image.Rect(0, 0, superWidth, superHeight))
+	for py := 0; py < superHeight; py++ {
+		y := float64(py)/float64(superHeight)*(ymax-ymin) + ymin
+		for px := 0; px < superWidth; px++ {
+			x := float64(px)/float64(superWidth)*(xmax-xmin) + xmin
+			z := complex(x, y)
+			img.Set(px, py, newton.NewtonColorLoop(z, boundary))
+		}
+	}
+	err = png.Encode(w, img)
+	if err != nil {
+		return
+	}
 }
 
 func SuperSampleMax(w io.Writer) {
