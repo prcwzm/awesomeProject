@@ -1,6 +1,8 @@
 package basename
 
-func Basenameeasy(s string) (sr string) {
+import "strings"
+
+func EasyBasename(s string) (sr string) {
 	sr = ""
 	if len(s) == 0 {
 		return
@@ -17,6 +19,15 @@ func Basenameeasy(s string) (sr string) {
 			sr = sr[i+1:]
 			break
 		}
+	}
+	return
+}
+
+func PromoteBasename(s string) (sr string) {
+	slash := strings.LastIndex(s, "/")
+	sr = s[slash+1:]
+	if dot := strings.LastIndex(sr, "."); dot != -1 {
+		sr = sr[:dot]
 	}
 	return
 }

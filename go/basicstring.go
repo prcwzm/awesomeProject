@@ -13,5 +13,5 @@ func main() {
 	} else {
 		input = os.Args[1]
 	}
-	fmt.Printf("%s\n", basename.Basenameeasy(input))
+	fmt.Printf("%s\n", basename.PromoteBasename(input))
 }
