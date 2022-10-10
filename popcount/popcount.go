@@ -36,3 +36,25 @@ func PopCountRemoveZero(x uint64) (count int) {
 	}
 	return
 }
+
+func H264PopCount(x [32]uint8, y [32]uint8) (count int) {
+	for i := 0; i < 32; i++ {
+		if !(x[i] == y[i]) {
+			count += popCount(x[i], y[i])
+		}
+	}
+	return
+}
+
+func popCount(x uint8, y uint8) (count int) {
+	for i := 0; i < 8; i++ {
+		xl := x & 0x01
+		yl := y & 0x01
+		if xl^yl == 1 {
+			count++
+		}
+		x = x >> 1
+		y = y >> 1
+	}
+	return
+}
