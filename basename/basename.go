@@ -3,6 +3,7 @@ package basename
 import (
 	"bytes"
 	"strings"
+	"unicode"
 )
 
 func EasyBasename(s string) (sr string) {
@@ -46,12 +47,68 @@ func Comma(s string) string {
 func NonRecursionComma(s string) string {
 	var buffer bytes.Buffer
 	read := len(s) % 3
-	buffer.WriteString(s[:read-1])
+	buffer.WriteString(s[:read])
+	if read > 0 {
+		buffer.WriteByte(',')
+	}
 	for i, v := range s[read:] {
-		if i%3 == 0 {
+		if i%3 == 0 && i != 0 {
 			buffer.WriteString(",")
 		}
 		buffer.WriteRune(v)
 	}
 	return buffer.String()
+}
+
+func NonRecursionBackDotComma(s string) string {
+	if s == "" {
+		return s
+	}
+	var buffer bytes.Buffer
+	for i, v := range s {
+		if i%3 == 0 && i != 0 {
+			buffer.WriteString(",")
+		}
+		buffer.WriteRune(v)
+	}
+	return buffer.String()
+}
+
+func FloatComma(s string) string {
+	if s == "" {
+		return s
+	}
+	var buffer bytes.Buffer
+	if !unicode.IsDigit(rune(s[0])) {
+		buffer.WriteByte(s[0])
+		s = s[1:]
+	}
+	spliterator := strings.Split(s, ".")
+	if len(spliterator) != 2 {
+		return s
+	}
+	integerPart := spliterator[0]
+	decimalPart := spliterator[1]
+	//integerPart
+	buffer.WriteString(NonRecursionComma(integerPart))
+	buffer.WriteByte('.')
+	buffer.WriteString(NonRecursionBackDotComma(decimalPart))
+	return buffer.String()
+}
+
+func Heterogeneous(l string, r string) bool {
+	for len(l) > 0 || len(r) > 0 {
+		v := l[0]
+		if strings.Count(l, string(v)) == strings.Count(r, string(v)) {
+			strings.ReplaceAll(l, string(v), "")
+			strings.ReplaceAll(r, string(v), "")
+		} else {
+			return false
+		}
+	}
+	if len(l) == 0 && len(r) == 0 {
+		return true
+	} else {
+		return false
+	}
 }
