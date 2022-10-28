@@ -1,5 +1,7 @@
 package sliceTest
 
+import "../sliceStack"
+
 func ReverseSlice(s []int) {
 	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
 		s[i], s[j] = s[j], s[i]
@@ -84,4 +86,14 @@ func Rotate(x []int, r int) (y []int) {
 		y[i] = x[ptr]
 	}
 	return
+}
+
+func removeNeighbors(strList []string) (rs []string) {
+	stack := sliceStack.SliceStack[string]{}
+	for _, str := range strList {
+		if str != stack.GetTop() {
+			stack.Push(str)
+		}
+	}
+	return stack.GetList()
 }
