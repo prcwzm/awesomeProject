@@ -7,6 +7,12 @@ import (
 
 func main() {
 	a := [...]byte{'a', ' ', ' ', ' ', 'c', 'd', 'e', 'f', ' ', ' ', ' ', ' ', ' ', 'j'}
+	sliceTest.ReverseBytes(a[:])
+	fmt.Println(string(a[:]))
+}
+
+func shortBlanks() {
+	a := [...]byte{'a', ' ', ' ', ' ', 'c', 'd', 'e', 'f', ' ', ' ', ' ', ' ', ' ', 'j'}
 	c := sliceTest.ShortBlanks(a[:])
 	fmt.Println(string(c))
 }

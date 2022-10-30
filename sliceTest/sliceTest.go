@@ -11,6 +11,12 @@ func ReverseSlice(s []int) {
 	}
 }
 
+func ReverseBytes(s []byte) {
+	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
+		s[i], s[j] = s[j], s[i]
+	}
+}
+
 func ReverseSlicePtr(s *[9]int, length int) {
 	for i, j := 0, length-1; i < j; i, j = i+1, j-1 {
 		(*s)[i], (*s)[j] = (*s)[j], (*s)[i]
