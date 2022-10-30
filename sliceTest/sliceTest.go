@@ -88,9 +88,13 @@ func Rotate(x []int, r int) (y []int) {
 	return
 }
 
-func removeNeighbors(strList []string) (rs []string) {
+func RemoveNeighbors(strList []string) (rs []string) {
 	stack := sliceStack.SliceStack[string]{}
-	for _, str := range strList {
+	if len(strList) == 0 {
+		return strList
+	}
+	stack.Push(strList[0])
+	for _, str := range strList[1:] {
 		if str != stack.GetTop() {
 			stack.Push(str)
 		}

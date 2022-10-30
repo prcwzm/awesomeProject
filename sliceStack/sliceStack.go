@@ -8,7 +8,7 @@ func (s *SliceStack[T]) Len() int         { return len(s.stack) }
 func (s *SliceStack[T]) Append(element T) { s.stack = append(s.stack, element) }
 func (s *SliceStack[T]) PopAndGet() (top T) {
 	if s.Len() == 0 {
-		return nil
+		return
 	}
 	top = s.stack[len(s.stack)-1]
 	s.stack = s.stack[:len(s.stack)-1]
@@ -23,7 +23,7 @@ func (s *SliceStack[T]) Pop() {
 
 func (s *SliceStack[T]) GetTop() (top T) {
 	if s.Len() == 0 {
-		return nil
+		return
 	}
 	return s.stack[len(s.stack)-1]
 }
@@ -47,5 +47,5 @@ func (s *SliceStack[T]) GetList() []T {
 }
 
 func (s *SliceStack[T]) Push(element T) {
-
+	s.stack = append(s.stack, element)
 }

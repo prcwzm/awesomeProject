@@ -6,6 +6,15 @@ import (
 )
 
 func main() {
+	a := [...]string{"a", "a", "b", "b", "b", "b", "c", "d", "e", "f", "g"}
+	b := sliceTest.RemoveNeighbors(a[:])
+	for _, r := range b {
+		fmt.Printf(r)
+	}
+	fmt.Printf("\n")
+}
+
+func rotate() {
 	a := [...]int{1, 2, 3, 4, 5, 6, 7, 8, 9}
 	b := sliceTest.Rotate(a[:], 3)
 	fmt.Println(b)
