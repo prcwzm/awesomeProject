@@ -1,6 +1,9 @@
 package sliceTest
 
-import "../sliceStack"
+import (
+	"../sliceStack"
+	"unicode"
+)
 
 func ReverseSlice(s []int) {
 	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
@@ -97,6 +100,28 @@ func RemoveNeighbors(strList []string) (rs []string) {
 	for _, str := range strList[1:] {
 		if str != stack.GetTop() {
 			stack.Push(str)
+		}
+	}
+	return stack.GetList()
+}
+
+func ShortBlanks(bytesList []byte) (rs []byte) {
+	stack := sliceStack.SliceStack[byte]{}
+	if len(bytesList) == 0 {
+		return bytesList
+	}
+	same := false
+	for _, b := range bytesList {
+		if unicode.IsSpace(rune(b)) {
+			if same {
+				continue
+			} else {
+				same = true
+				stack.Push(b)
+			}
+		} else {
+			stack.Push(b)
+			same = false
 		}
 	}
 	return stack.GetList()

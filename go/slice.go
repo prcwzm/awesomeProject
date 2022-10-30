@@ -6,6 +6,12 @@ import (
 )
 
 func main() {
+	a := [...]byte{'a', ' ', ' ', ' ', 'c', 'd', 'e', 'f', ' ', ' ', ' ', ' ', ' ', 'j'}
+	c := sliceTest.ShortBlanks(a[:])
+	fmt.Println(string(c))
+}
+
+func removeNeighbors() {
 	a := [...]string{"a", "a", "b", "b", "b", "b", "c", "d", "e", "f", "g"}
 	b := sliceTest.RemoveNeighbors(a[:])
 	for _, r := range b {
