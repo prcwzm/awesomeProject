@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	ReadRegexp()
+	ReadRegexpReadCntFiles()
 }
 
 func ReadTranscodeTime() {
@@ -14,4 +14,11 @@ func ReadTranscodeTime() {
 
 func ReadRegexp() {
 	workscript.ReadRegexp()
+}
+
+func ReadRegexpReadFiles() {
+	workscript.ReadRegexpReadFiles()
+}
+func ReadRegexpReadCntFiles() {
+	workscript.ReadRegexpReadCntFiles()
 }
