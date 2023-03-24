@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"strconv"
 	"unicode"
 	"unicode/utf8"
 )
@@ -140,6 +141,8 @@ func ShortBlanks(bytesList []byte) (rs []byte) {
 
 func CharCount() {
 	counts := make(map[rune]int)
+	numberMap := make(map[int]int)
+	letterMap := make(map[rune]int)
 	var utflen [utf8.UTFMax + 1]int
 	invalid := 0
 
@@ -157,6 +160,12 @@ func CharCount() {
 			invalid++
 			continue
 		}
+		if unicode.IsLetter(r) && n == 1 {
+			letterMap[r]++
+		}
+		if unicode.IsNumber(r) && n == 1 {
+			numberMap[int(r)]++
+		}
 		counts[r]++
 		utflen[n]++
 	}
@@ -170,7 +179,47 @@ func CharCount() {
 			fmt.Printf("%d\t%d\n", i, n)
 		}
 	}
+	for num, n := range numberMap {
+		fmt.Printf("number:%c\tcount:%d\n", num, n)
+	}
+	for letter, n := range letterMap {
+		fmt.Printf("letter:%c\t%d\n", letter, n)
+	}
 	if invalid > 0 {
 		fmt.Printf("\n%d invalid UTF-8 characters\n", invalid)
 	}
+}
+
+func WordFreq() {
+	if len(os.Args) < 3 {
+		fmt.Printf("请输入文件名 及 正则表达式")
+		return
+	}
+	fileNumber, _ := strconv.Atoi(os.Args[1])
+	charMap := make(map[string]int)
+
+	for i := 0; i < fileNumber; i++ {
+		filepath := os.Args[i+2]
+		file, err := os.OpenFile(filepath, os.O_RDWR, 0666)
+		if err != nil {
+			fmt.Println("Open file error!", err)
+			return
+		}
+
+		_, err = file.Stat()
+		if err != nil {
+			panic(err)
+		}
+		scanner := bufio.NewScanner(file)
+		scanner.Split(bufio.ScanWords)
+
+		for scanner.Scan() {
+			charMap[scanner.Text()]++
+		}
+
+		for char, n := range charMap {
+			fmt.Printf("%s\t%d\n", char, n)
+		}
+	}
+
 }
