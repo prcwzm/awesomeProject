@@ -7,7 +7,7 @@ type ListNode struct {
 
 func Reserve(head *ListNode) *ListNode {
 	if head.Next == nil || head == nil {
-		return nil
+		return head
 	}
 	newHead := Reserve(head.Next)
 	head.Next.Next = head
