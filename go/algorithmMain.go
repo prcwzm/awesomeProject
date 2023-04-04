@@ -9,6 +9,19 @@ func main() {
 	InBackBinaryTree()
 }
 
+func CQueue() {
+	q := algorithm.CQueue()
+	q.Push(1)
+	q.Push(2)
+	q.Push(3)
+	fmt.Println(q.Pop()) // 1
+	fmt.Println(q.Pop()) // 2
+	q.Push(4)
+	fmt.Println(q.Pop()) // 3
+	fmt.Println(q.Pop()) // 4
+	fmt.Println(q.Pop()) // -1
+}
+
 func InBackBinaryTree() {
 	inOrder := []int{4, 2, 1, 5, 3, 6}
 	backOrder := []int{4, 2, 5, 6, 3, 1}
