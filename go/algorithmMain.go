@@ -6,7 +6,40 @@ import (
 )
 
 func main() {
-	TestTwoDimFIndNumber()
+	InBackBinaryTree()
+}
+
+func InBackBinaryTree() {
+	inOrder := []int{4, 2, 1, 5, 3, 6}
+	backOrder := []int{4, 2, 5, 6, 3, 1}
+	root := algorithm.InBackBinaryTree(inOrder, backOrder)
+	fmt.Println("中序遍历结果为：")
+	InOrder(root)
+	fmt.Println("\n后序遍历结果为：")
+	BackOrder(root)
+}
+
+func InOrder(root *algorithm.BinaryTree) {
+	if root == nil {
+		return
+	}
+	InOrder(root.Left)
+	fmt.Print(root.Val, " ")
+	InOrder(root.Right)
+}
+
+func BackOrder(root *algorithm.BinaryTree) {
+	if root == nil {
+		return
+	}
+	BackOrder(root.Left)
+	BackOrder(root.Right)
+	fmt.Print(root.Val, " ")
+}
+
+func BlankReplace() {
+	fmt.Println(algorithm.BlankReplace("sda s s da asd fa s"))
+
 }
 
 func inPostBinaryTree() {
@@ -63,4 +96,9 @@ func TestTwoDimFIndNumber() {
 	}
 
 	fmt.Println(x, y)
+}
+
+func ReverseOutput() {
+	testList := []int{1, 2, 3, 4}
+	algorithm.ReverseOutput(testList)
 }
