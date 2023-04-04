@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	InBackBinaryTree()
+	Fib()
 }
 
 func CQueue() {
@@ -20,6 +20,10 @@ func CQueue() {
 	fmt.Println(q.Pop()) // 3
 	fmt.Println(q.Pop()) // 4
 	fmt.Println(q.Pop()) // -1
+}
+
+func Fib() {
+	algorithm.Fib(5)
 }
 
 func InBackBinaryTree() {
