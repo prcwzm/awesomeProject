@@ -6,7 +6,16 @@ import (
 )
 
 func main() {
-	Fib()
+	FindLessElement()
+}
+
+func FindLessElement() {
+	list := []int{3, 4, 5, 1, 2}
+	fmt.Println(algorithm.FindLessElement(list))
+}
+
+func FrogDump() {
+	fmt.Println(algorithm.FrogDump(2))
 }
 
 func CQueue() {
