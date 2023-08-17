@@ -6,7 +6,12 @@ import (
 )
 
 func main() {
-	FindLessElement()
+	StockTime()
+}
+
+func binaryOne() {
+	i := 1000
+	fmt.Println(algorithm.BinaryOne(i))
 }
 
 func FindLessElement() {
@@ -127,4 +132,9 @@ func TestTwoDimFIndNumber() {
 func ReverseOutput() {
 	testList := []int{1, 2, 3, 4}
 	algorithm.ReverseOutput(testList)
+}
+
+func StockTime() {
+	lit := []float64{0, 1, 2, 3, 4}
+	fmt.Println(algorithm.StockProfit(lit))
 }
