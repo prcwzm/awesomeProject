@@ -6,7 +6,15 @@ import (
 )
 
 func main() {
-	StockTime()
+	combineTwoArrays()
+}
+
+func combineTwoArrays() {
+	array := []int{1, 2, 3, 4, 10}
+	a := make([]int, 10, 10)
+	copy(a, array)
+	b := []int{2, 4, 6, 8, 10}
+	algorithm.CombineTwoArrays(a, b, 5, 5)
 }
 
 func binaryOne() {
@@ -137,4 +145,14 @@ func ReverseOutput() {
 func StockTime() {
 	lit := []float64{0, 1, 2, 3, 4}
 	fmt.Println(algorithm.StockProfit(lit))
+}
+
+func Jump() {
+	list := []float64{2, 2, 1, 0, 1, 2, 3, 4}
+	algorithm.Jump(list)
+}
+
+func JumpZero() {
+	list := []float64{2, 2, 1, 0, 1, 2, 3, 4}
+	algorithm.JumpZero(list)
 }
